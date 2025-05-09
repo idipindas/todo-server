@@ -7,7 +7,7 @@ import todoRoutes from './routes/todo.routes'
 
 connectDB()
 const app = express();
-const PORT = process.env.PORT;
+const PORT: any = process.env.PORT;
 app.use(cors())
 
 app.use(express.json());
@@ -18,6 +18,9 @@ app.get('/', (_req, res) => {
     res.send('Hello from Node + TypeScript!');
 });
 
-app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+// app.listen(PORT, () => {
+//     console.log(`Server is running at http://localhost:${PORT}`);
+// });
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Running at http://0.0.0.0:${PORT}`);
 });
