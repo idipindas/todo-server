@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "f441b5b3-02f2-4602-8dac-f0fef8d108a4",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38617747",
+		"_collection_link": "https://autodocz.postman.co/workspace/autodocz-Workspace~f24cee60-3caf-433a-82fa-a551ad5c996c/collection/38617747-f441b5b3-02f2-4602-8dac-f0fef8d108a4?action=share&source=collection_link&creator=38617747"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dipindasinfo@gmail.com\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dipindasinfo@gmail.com\",\r\n    \"password\":\"1111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "todo",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFlZDM5YmVjYWU2OTY0MThjMmY3NDAiLCJpYXQiOjE3NDY4NTA3MjIsImV4cCI6MTc0NjkzNzEyMn0.aMZp67hD1bmbJG6_3j7nb5xkIktQA4jPiiURmjJYYv8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"My Weekend Plan\",\r\n  \"items\": [\r\n    { \"text\": \"Clean room\", \"completed\": false },\r\n    { \"text\": \"Buy groceries\", \"completed\": false }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFjZTc2Zjc2MTgwMjhiOWYxMDhlZTQiLCJpYXQiOjE3NDY3MjUwOTYsImV4cCI6MTc0NjgxMTQ5Nn0.v7t8oAbdfhMAhd4uD4sEHyejV8TH15acSXRNSN7YRXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated To-Do List Name\",\r\n  \"items\": [\r\n    {\r\n      \"text\": \"Do laundry\",\r\n      \"completed\": true\r\n    },\r\n    {\r\n      \"text\": \"Go grocery shopping\",\r\n      \"completed\": false\r\n    },\r\n    {\r\n      \"text\": \"Read a book - write diary\",\r\n      \"completed\": false\r\n    }\r\n    ,   {\r\n      \"text\": \" write diary\",\r\n      \"completed\": false\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos/681ce9718fd988ede48af690",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"681ce9718fd988ede48af690"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFjZTc2Zjc2MTgwMjhiOWYxMDhlZTQiLCJpYXQiOjE3NDY3MjUwOTYsImV4cCI6MTc0NjgxMTQ5Nn0.v7t8oAbdfhMAhd4uD4sEHyejV8TH15acSXRNSN7YRXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"completed\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos/:list_id/items/:item_id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								":list_id",
+								"items",
+								":item_id"
+							],
+							"variable": [
+								{
+									"key": "list_id",
+									"value": "681ce9098fd988ede48af68c"
+								},
+								{
+									"key": "item_id",
+									"value": "681ce9098fd988ede48af68d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFjZTc2Zjc2MTgwMjhiOWYxMDhlZTQiLCJpYXQiOjE3NDY3MjUwOTYsImV4cCI6MTc0NjgxMTQ5Nn0.v7t8oAbdfhMAhd4uD4sEHyejV8TH15acSXRNSN7YRXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated To-Do List Name\",\r\n  \"items\": [\r\n    {\r\n      \"text\": \"Do laundry\",\r\n      \"completed\": true\r\n    },\r\n    {\r\n      \"text\": \"Go grocery shopping\",\r\n      \"completed\": false\r\n    },\r\n    {\r\n      \"text\": \"Read a book - write diary\",\r\n      \"completed\": false\r\n    }\r\n    ,   {\r\n      \"text\": \" write diary\",\r\n      \"completed\": false\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos/681ce9718fd988ede48af690",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"681ce9718fd988ede48af690"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFjZTc2Zjc2MTgwMjhiOWYxMDhlZTQiLCJpYXQiOjE3NDY3MjUwOTYsImV4cCI6MTc0NjgxMTQ5Nn0.v7t8oAbdfhMAhd4uD4sEHyejV8TH15acSXRNSN7YRXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated To-Do List Name\",\r\n  \"items\": [\r\n    {\r\n      \"text\": \"Do laundry\",\r\n      \"completed\": true\r\n    },\r\n    {\r\n      \"text\": \"Go grocery shopping\",\r\n      \"completed\": false\r\n    },\r\n    {\r\n      \"text\": \"Read a book - write diary\",\r\n      \"completed\": false\r\n    }\r\n    ,   {\r\n      \"text\": \" write diary\",\r\n      \"completed\": false\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos/681ce9718fd988ede48af690",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos",
+								"681ce9718fd988ede48af690"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFlZDM5YmVjYWU2OTY0MThjMmY3NDAiLCJpYXQiOjE3NDY4NTA3MjIsImV4cCI6MTc0NjkzNzEyMn0.aMZp67hD1bmbJG6_3j7nb5xkIktQA4jPiiURmjJYYv8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated To-Do List Name\",\r\n  \"items\": [\r\n    {\r\n      \"text\": \"Do laundry\",\r\n      \"completed\": true\r\n    },\r\n    {\r\n      \"text\": \"Go grocery shopping\",\r\n      \"completed\": false\r\n    },\r\n    {\r\n      \"text\": \"Read a book - write diary\",\r\n      \"completed\": false\r\n    }\r\n    ,   {\r\n      \"text\": \" write diary\",\r\n      \"completed\": false\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/todos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFlZDM5YmVjYWU2OTY0MThjMmY3NDAiLCJpYXQiOjE3NDY4NTA3MjIsImV4cCI6MTc0NjkzNzEyMn0.aMZp67hD1bmbJG6_3j7nb5xkIktQA4jPiiURmjJYYv8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODFjZTc2Zjc2MTgwMjhiOWYxMDhlZTQiLCJpYXQiOjE3NDY3MjQ3NDEsImV4cCI6MTc0NjcyODM0MX0.XTR2yxJV2Zh_TORnpoUxvzYp0m_FDICGunkq6dhwIaw\"\n",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
