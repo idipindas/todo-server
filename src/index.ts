@@ -29,9 +29,10 @@ app.get('/', (_req, res) => {
 
 // HTTPS certificate options
 const options = {
-    key: fs.readFileSync('/etc/ssl/private/todo-server.key'),
-    cert: fs.readFileSync('/etc/ssl/certs/todo-server.crt'),
-};
+    key: fs.readFileSync('./certs/todo-server.key'),
+    cert: fs.readFileSync('./certs/todo-server.crt'),
+  };
+  
 
 // Start HTTPS server
 https.createServer(options, app).listen(PORT, '0.0.0.0', () => {
